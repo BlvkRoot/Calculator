@@ -7,8 +7,8 @@ function captureSelectedValues() {
     document.querySelectorAll('.buttons')
         .forEach(button => {
             button.addEventListener('click', () => {
-                let convertedInt = !isNaN(parseInt(button.innerHTML))
-                    ? parseInt(button.innerHTML)
+                let convertedInt = !isNaN(parseFloat(button.innerHTML))
+                    ? parseFloat(button.innerHTML)
                     : button.innerHTML;
 
                 console.log(convertedInt);
@@ -18,7 +18,7 @@ function captureSelectedValues() {
                     equationsContainer.innerHTML += convertedInt;
 
                 if (operationSigns.includes(getLastValue()) &&
-                    typeof convertedInt === typeof parseInt(getLastValue()))
+                    typeof convertedInt === typeof parseFloat(getLastValue()))
                     equationsContainer.innerHTML += convertedInt;
             })
         });
@@ -29,10 +29,10 @@ function splitValues() {
         .addEventListener('click', (e) => {
             // getLastValue();
             let operandSplit = equationsContainer.innerHTML.split(selectedOperand);
-            let firstNumber = parseInt(operandSplit[0]);
-            let secondNumber = parseInt(operandSplit[1].split('=')[0]);
+            let firstNumber = parseFloat(operandSplit[0]);
+            let secondNumber = parseFloat(operandSplit[1].split('=')[0]);
         
-            resultsContainer.innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
+            resultsContainer.innerHTML = Number(calculateResults(selectedOperand, firstNumber, secondNumber)).toFixed(1);
             console.log(calculateResults(selectedOperand, firstNumber, secondNumber));
         });
 }
