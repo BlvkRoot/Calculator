@@ -20,6 +20,10 @@ function captureSelectedValues() {
                 if (operationSigns.includes(getLastValue()) &&
                     typeof convertedInt === typeof parseFloat(getLastValue()))
                     equationsContainer.innerHTML += convertedInt;
+
+                if(getLastValue() !== selectedOperand &&
+                    operationSigns.includes(getLastValue()))
+                    equationsContainer.innerHTML = replaceDifferentOperator(selectedOperand);
             })
         });
 }
@@ -82,7 +86,14 @@ function clearEquations() {
         })
 }
 
+function replaceDifferentOperator(newOperator){
+    let splitToReplace = equationsContainer.innerHTML.split(getLastValue());
+
+    console.log('splitToReplace: ', splitToReplace[0], 'last value: ', getLastValue());
+    return splitToReplace[0] + newOperator;
+}
+
+setOperator();
 captureSelectedValues();
 splitValues();
-setOperator();
 clearEquations();
