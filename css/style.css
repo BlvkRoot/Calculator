@@ -30,8 +30,8 @@ section .calculator__container {
     color:rgb(211, 211, 211);
     text-align: center;
     position: absolute;
-    left: 42%;
-    top: 2.4%;
+    left: 46%;
+    top: 9.4%;
 }
 
 /* BUTTONS CONTAINER STYLES */
@@ -112,5 +112,18 @@ section .calculator__container {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 700px) {
+    .calculator__title {
+        color:rgb(211, 211, 211);
+        text-align: center;
+        position: absolute;
+        left: 42%;
+        top: 3%;
+    }
 }
 
