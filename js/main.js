@@ -6,9 +6,11 @@ function captureSelectedValues() {
     document.querySelectorAll('.buttons')
         .forEach(button => {
             button.addEventListener('click', () => {
-                let convertedInt = parseInt(button.innerHTML)
+                let convertedInt = !isNaN(parseInt(button.innerHTML))
                     ? parseInt(button.innerHTML)
                     : button.innerHTML;
+
+                console.log(convertedInt);
 
                 if (convertedInt !== "C"
                     && !operationSigns.includes(getLastValue()))
@@ -41,15 +43,18 @@ function calculateResults(operator, firstNum, secondNum) {
         case '-':
             return firstNum - secondNum;
         case '/':
-            divisorByZero(secondNum);
-            return firstNum / secondNum;
+            return divisorByZero(firstNum, secondNum);
         case '*':
             return firstNum * secondNum;
     }
 }
 
-function divisorByZero(secondNum) {
-    if(secondNum === 0) return "Cannot divide by zero.";
+function divisorByZero(firstNum, secondNum) {
+    if(secondNum === 0) 
+        return "Cannot divide by zero.";
+    else
+        return firstNum / secondNum;
+
 }
 
 function getLastValue() {
