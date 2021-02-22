@@ -1,4 +1,5 @@
 let equationsContainer = document.querySelector('#equations');
+let resultsContainer = document.querySelector('#results');
 let operationSigns = ["+", "-", "/", "*", "="];
 let selectedOperand = "";
 
@@ -31,7 +32,7 @@ function splitValues() {
             let firstNumber = parseInt(operandSplit[0]);
             let secondNumber = parseInt(operandSplit[1].split('=')[0]);
         
-            document.querySelector('#results').innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
+            resultsContainer.innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
             console.log(calculateResults(selectedOperand, firstNumber, secondNumber));
         });
 }
@@ -73,6 +74,15 @@ function setOperator() {
         });
 }
 
+function clearEquations() {
+    document.querySelector('#clear')
+        .addEventListener('click', () => {
+            equationsContainer.innerHTML = "";
+            resultsContainer.innerHTML = "0";
+        })
+}
+
 captureSelectedValues();
 splitValues();
 setOperator();
+clearEquations();
