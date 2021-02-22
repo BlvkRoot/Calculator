@@ -22,7 +22,8 @@ function captureSelectedValues() {
                     equationsContainer.innerHTML += convertedInt;
 
                 if(getLastValue() !== selectedOperand &&
-                    operationSigns.includes(getLastValue()))
+                    operationSigns.includes(getLastValue())
+                    && getLastValue() !== "=")
                     equationsContainer.innerHTML = replaceDifferentOperator(selectedOperand);
             })
         });
