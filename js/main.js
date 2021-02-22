@@ -37,7 +37,8 @@ function splitValues() {
             let firstNumber = parseFloat(operandSplit[0]);
             let secondNumber = parseFloat(operandSplit[1].split('=')[0]);
         
-            resultsContainer.innerHTML = Number(calculateResults(selectedOperand, firstNumber, secondNumber)).toFixed(1);
+            // resultsContainer.innerHTML = Number(calculateResults(selectedOperand, firstNumber, secondNumber)).toFixed(1);
+            resultsContainer.innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
             console.log(calculateResults(selectedOperand, firstNumber, secondNumber));
         });
 }
