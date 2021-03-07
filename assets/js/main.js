@@ -28,11 +28,19 @@ function splitValues() {
         .addEventListener('click', (e) => {
             // getLastValue();
             let operandSplit = equationsContainer.innerHTML.split(selectedOperand);
-            let firstNumber = parseInt(operandSplit[0]);
-            let secondNumber = parseInt(operandSplit[1].split('=')[0]);
+            
+            if (operandSplit[0].split('=') != '=' && operandSplit[0] != ' ' && operandSplit[1].indexOf("=") != -1) {
+                let firstNumber = parseInt(operandSplit[0]);
+                let secondNumber = parseInt(operandSplit[1].split('=')[0]);
         
-            document.querySelector('#results').innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
-            console.log(calculateResults(selectedOperand, firstNumber, secondNumber));
+                document.querySelector('#results').innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
+                console.log(calculateResults(selectedOperand, firstNumber, secondNumber));
+            } else {
+                equationsContainer.innerHTML = '';
+                swal("Oh, Nooo!", "There is no operation to get the result!", "error", {
+                    button: "OK!",
+                  });
+            }
         });
     
         document.querySelector('#clear')

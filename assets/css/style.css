@@ -38,7 +38,7 @@ body {
 
 section .calculator__container {
     width: 67%;
-    border-radius: 1px !important;
+    border-radius: 0 0 20px 20px !important;
     height: 76%;
     background: #000046;  /* fallback for old browsers */
     background: -webkit-linear-gradient(160deg, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
@@ -50,7 +50,7 @@ section .calculator__container {
     width: 60%;
     color:rgb(255, 255, 255);
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     position: absolute;
     left: 20%;
@@ -76,12 +76,22 @@ section .calculator__container {
     padding: 4px;
     border-radius: 0;
 }
+
+.buttons#zero {
+    width: 66.66% !important;
+}
+
+.buttons#dot {
+    width: 33.333% !important;
+}
+
+
 .cbutton-operators .buttons {
     width: 100%;
 }
 
 .buttons:hover {
-    background-color: gray;
+    background-color: #1CB5E0;
 }
 
 .buttons#equal__sign {
