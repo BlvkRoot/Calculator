@@ -4,38 +4,45 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculator</title>
-        <!-- Project Css -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/img/favicon.ico" />
+        <title>Calculator | Blvck & Dry'C</title>
         <!-- Bootstrap Css CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- Project Css -->
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
-    <body class="w-100 h-100">
-        <main class="container w-100 h-100 d-flex justify-content-center align-content-center">
-            <section class="c-container">
+    <body class="w-100 h-100 d-flex align-items-center justify-content-center">
+        <main class="c-main-container container w-100 h-100 d-flex align-items-center justify-content-center">
+            <section class="c-container d-flex align-items-center justify-content-center">
                 <h1 class="calculator__title">Calculator</h1>
-                <div class="calculator__container">
-                    <div class="equations__section" id="equations"></div>
-                    <div class="results__section" id="results">0</div>
-                    <div class="buttons__container">
-                        <div class="buttons operator" id="division">/</div>
-                        <div class="buttons operator" id="subtraction">-</div>
-                        <div class="buttons operator" id="addition">+</div>
-                        <div class="buttons">7</div>
-                        <div class="buttons">8</div>
-                        <div class="buttons">9</div>
-                        <div class="buttons">4</div>
-                        <div class="buttons">5</div>
-                        <div class="buttons">6</div>
-                        <div class="buttons">1</div>
-                        <div class="buttons">2</div>
-                        <div class="buttons">3</div>
-                        <div class="buttons operator" id="multiplication">*</div>
-                        <div class="buttons">0</div>
-                        <div class="buttons" id="equal__sign">=</div>
-                        <div class="buttons" id="clear">C</div>
-                        <div class="buttons" id="dot">.</div>
+                <div class="calculator__container pb-0 rounded d-flex flex-column justify-content-center text-center">
+                    <div class="equations__section w-100 mb-0 mr-0 ml-0 pr-2" id="equations"></div>
+                    <div class="results__section w-100 m-0 mb-4 pr-2" id="results">0</div>
+                    <div class="buttons__container w-100 m-0 d-flex flex-wrap align-items-stretch">
+                        <span class="m-0 d-flex flex-wrap-reverse w-75">
+                            <button class="buttons btn w-75">0</button>
+                            <button class="buttons btn w-25" id="dot"> . </button>
+                            <button class="buttons btn m-0">1</button>
+                            <button class="buttons btn m-0">2</button>
+                            <button class="buttons btn m-0">3</button>
+                            <button class="buttons btn m-0">4</button>
+                            <button class="buttons btn m-0">5</button>
+                            <button class="buttons btn m-0">6</button>
+                            <button class="buttons btn m-0">7</button>
+                            <button class="buttons btn m-0">8</button>
+                            <button class="buttons btn m-0">9</button>
+                        </span>
+                        <span class="cbutton-operators m-0 d-flex flex-column w-25">
+                            <button class="buttons btn operator" id="division">/</button>
+                            <button class="buttons btn operator" id="multiplication">*</button>
+                            <button class="buttons btn operator" id="subtraction">-</button>
+                            <button class="buttons btn operator" id="addition">+</button>
+                            <button class="buttons btn" id="equal__sign"> = </button>
+                        </span>
+                        <span class="m-0 d-flex flex-wrap-reverse w-100">
+                            <button class="buttons btn" id="clear">C</button>
+                        </span>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,5 @@
 let equationsContainer = document.querySelector('#equations');
+let resultsContainer = document.querySelector('#results');
 let operationSigns = ["+", "-", "/", "*", "="];
 let selectedOperand = "";
 
@@ -10,13 +11,14 @@ function captureSelectedValues() {
                     ? parseInt(button.innerHTML)
                     : button.innerHTML;
 
-                if (convertedInt !== "C"
+                if (convertedInt != "C"
                     && !operationSigns.includes(getLastValue()))
                     equationsContainer.innerHTML += convertedInt;
 
                 if (operationSigns.includes(getLastValue()) &&
                     typeof convertedInt === typeof parseInt(getLastValue()))
                     equationsContainer.innerHTML += convertedInt;
+                
             })
         });
 }
@@ -31,6 +33,12 @@ function splitValues() {
         
             document.querySelector('#results').innerHTML = calculateResults(selectedOperand, firstNumber, secondNumber);
             console.log(calculateResults(selectedOperand, firstNumber, secondNumber));
+        });
+    
+        document.querySelector('#clear')
+        .addEventListener('click', (e) => {
+            equationsContainer.innerHTML = '';
+            resultsContainer.innerHTML = '0';
         });
 }
 
